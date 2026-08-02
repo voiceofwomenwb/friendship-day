@@ -87,13 +87,17 @@ body{
 .glass{
     width:90%;
     max-width:700px;
-    padding:40px;
-    border-radius:25px;
+    padding:50px 40px;
     text-align:center;
     background:rgba(255,255,255,.08);
-    backdrop-filter:blur(18px);
     border:1px solid rgba(255,255,255,.15);
-    box-shadow:0 20px 60px rgba(0,0,0,.4);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-radius:30px;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.5),
+        0 0 40px rgba(255,93,147,.15);
+    animation:floatCard 5s ease-in-out infinite;
 }
 
 .small{
@@ -122,19 +126,20 @@ body{
 }
 
 #startBtn{
-    background:#ff5d93;
-    color:white;
+    padding:16px 40px;
     border:none;
-    padding:15px 40px;
     border-radius:50px;
     cursor:pointer;
+    background:linear-gradient(135deg,#ff5d93,#ff7eb3);
+    color:#fff;
     font-size:18px;
-    transition:.3s;
+    font-weight:600;
+    transition:.35s;
 }
 
 #startBtn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 30px rgba(255,93,147,.4);
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 10px 35px rgba(255,93,147,.45);
 }
 
 /* STORY */
@@ -272,4 +277,12 @@ body{
     font-size:40px;
 }
 
+}
+@keyframes floatCard{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
 }
