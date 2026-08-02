@@ -1,166 +1,80 @@
-// ELEMENTS
-
-const startBtn = document.getElementById("startBtn");
-
-const hero = document.getElementById("hero");
-
-const story = document.getElementById("story");
-
-const music = document.getElementById("bgMusic");
-
+// Elements
 const loader = document.getElementById("loader");
-
+const hero = document.getElementById("hero");
+const story = document.getElementById("story");
+const startBtn = document.getElementById("startBtn");
+const music = document.getElementById("bgMusic");
 const scenes = document.querySelectorAll(".scene");
 
+// Hide loader
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        loader.style.opacity = "0";
 
-// PAGE LOADING
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 800);
 
-window.addEventListener("load",()=>{
+    }, 1000);
+});
 
-setTimeout(()=>{
+// Start Story
+startBtn.addEventListener("click", () => {
 
-loader.style.opacity="0";
+    hero.style.display = "none";
+    story.style.display = "flex";
 
-setTimeout(()=>{
+    if (music) {
+        music.play().catch(() => {});
+    }
 
-loader.style.display="none";
-
-},1000);
-
-},1500);
+    startStory();
+    createHearts();
 
 });
 
+function startStory() {
 
-// START BUTTON
+    let current = 0;
 
-startBtn.addEventListener("click",()=>{
+    scenes.forEach(scene => scene.classList.remove("active"));
+    scenes[current].classList.add("active");
 
+    const interval = setInterval(() => {
 
-// hide hero
+        scenes[current].classList.remove("active");
+        current++;
 
-hero.style.display="none";
+        if (current < scenes.length) {
+            scenes[current].classList.add("active");
+        } else {
+            clearInterval(interval);
+        }
 
-
-// show story
-
-story.style.display="flex";
-
-
-// music start
-
-music.play().catch(()=>{});
-
-
-// start scenes
-
-startStory();
-
-
-// hearts
-
-createHearts();
-
-
-});
-// STORY CONTROL
-
-function startStory(){
-
-let current = 0;
-
-
-// first scene show
-
-showScene(current);
-
-
-let timer = setInterval(()=>{
-
-
-// remove old scene
-
-scenes[current].classList.remove("active");
-
-
-// next scene
-
-current++;
-
-
-if(current < scenes.length){
-
-showScene(current);
+    }, 5000);
 
 }
 
-else{
+// Floating Hearts
+function createHearts() {
 
-clearInterval(timer);
+    setInterval(() => {
 
-}
+        const heart = document.createElement("div");
 
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
 
-},5000);
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (18 + Math.random() * 18) + "px";
+        heart.style.animationDuration = (5 + Math.random() * 5) + "s";
 
+        document.body.appendChild(heart);
 
-}
+        setTimeout(() => {
+            heart.remove();
+        }, 10000);
 
-
-// SHOW SCENE
-
-function showScene(index){
-
-scenes[index].classList.add("active");
-
-}
-
-
-
-// FLOATING HEARTS
-
-function createHearts(){
-
-
-setInterval(()=>{
-
-
-const heart = document.createElement("div");
-
-
-heart.className="heart";
-
-
-heart.innerHTML="❤️";
-
-
-heart.style.left = Math.random()*100 + "vw";
-
-
-heart.style.animationDuration = 
-(5 + Math.random()*5) + "s";
-
-
-heart.style.fontSize =
-(15 + Math.random()*30) + "px";
-
-
-document.body.appendChild(heart);
-
-
-
-setTimeout(()=>{
-
-
-heart.remove();
-
-
-},10000);
-
-
-
-},600);
-
-
+    }, 500);
 
 }
