@@ -42,7 +42,7 @@ function startStory() {
 
     function changeScene() {
 
-        let delay = (current === 3) ? 20000 : 5000;
+        let delay = (current === 3) ? 30000 : 5000;
 
         setTimeout(() => {
 
