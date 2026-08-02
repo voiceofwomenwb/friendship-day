@@ -25,8 +25,10 @@ startBtn.addEventListener("click", () => {
     story.style.display = "flex";
 
     if (music) {
-        music.play().catch(() => {});
-    }
+    music.volume = 0.4; // 40% volume
+    music.currentTime = 0;
+    music.play().catch(err => console.log(err));
+}
 
     startStory();
     createHearts();
