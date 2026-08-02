@@ -1,0 +1,100 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#050816,#0b1c3d,#000000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.container{
+    text-align:center;
+    z-index:2;
+    padding:20px;
+}
+
+.line{
+    font-size:2rem;
+    margin:25px 0;
+    opacity:0;
+    transition:1s;
+}
+
+.names{
+    font-family:'Great Vibes',cursive;
+    font-size:4rem;
+    color:#ff4d88;
+    opacity:0;
+    text-shadow:
+    0 0 10px #ff4d88,
+    0 0 25px #ff4d88,
+    0 0 40px #ff4d88;
+    transition:1s;
+}
+
+.show{
+    opacity:1;
+}
+
+.hidden{
+    opacity:0;
+}
+
+#startBtn{
+    margin-top:40px;
+    padding:15px 35px;
+    font-size:18px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background:#ff4d88;
+    color:white;
+    transition:.3s;
+    box-shadow:0 0 20px #ff4d88;
+}
+
+#startBtn:hover{
+    transform:scale(1.08);
+}
+
+#stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:url("https://www.transparenttextures.com/patterns/stardust.png");
+    animation:moveStars 40s linear infinite;
+    opacity:.5;
+}
+
+@keyframes moveStars{
+    from{
+        background-position:0 0;
+    }
+    to{
+        background-position:0 1000px;
+    }
+}
+
+@media(max-width:768px){
+
+.line{
+    font-size:1.4rem;
+}
+
+.names{
+    font-size:3rem;
+}
+
+#startBtn{
+    font-size:16px;
+}
+
+}
