@@ -40,18 +40,25 @@ function startStory() {
     scenes.forEach(scene => scene.classList.remove("active"));
     scenes[current].classList.add("active");
 
-    const interval = setInterval(() => {
+    function changeScene() {
 
-        scenes[current].classList.remove("active");
-        current++;
+        let delay = (current === 3) ? 12000 : 5000;
 
-        if (current < scenes.length) {
-            scenes[current].classList.add("active");
-        } else {
-            clearInterval(interval);
-        }
+        setTimeout(() => {
 
-    }, 5000);
+            scenes[current].classList.remove("active");
+            current++;
+
+            if (current < scenes.length) {
+                scenes[current].classList.add("active");
+                changeScene();
+            }
+
+        }, delay);
+
+    }
+
+    changeScene();
 
 }
 
