@@ -1,127 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Friendship Day ❤️</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<title>For Pipai ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- Loader -->
 <div id="loader">
-
-<div class="loader-circle"></div>
-
-<p>Preparing Something Beautiful...</p>
-
+  <div class="loader-circle"></div>
+  <p>Preparing Something Beautiful...</p>
 </div>
 
+<!-- Background -->
 <div id="stars"></div>
-
 <div id="aurora"></div>
 
+<!-- Music (পরে music.mp3 যোগ করবে) -->
 <audio id="bgMusic" loop>
-
-<source src="music.mp3" type="audio/mpeg">
-
+  <source src="music.mp3" type="audio/mpeg">
 </audio>
 
+<!-- Hero -->
 <section id="hero">
+  <div class="glass">
 
-<div class="glass">
+    <p class="small">Happy Friendship Day</p>
 
-<p class="small">
+    <h1>
+      Ruh <span>❤️</span> Pipai
+    </h1>
 
-Happy Friendship Day
+    <p class="subtitle">
+      Some stories are written by destiny.<br>
+      Ours was written by the heart.
+    </p>
 
-</p>
+    <button id="startBtn">
+      Begin The Story
+    </button>
 
-<h1>
+  </div>
+</section>
 
-Ruh
+<!-- Story -->
+<section id="story">
 
-<span>❤️</span>
+  <div class="scene active">
+    <p class="quote">
+      "In a world full of billions, my heart chose only one..."
+    </p>
+  </div>
 
-Pipai
+  <div class="scene">
+    <p class="quote">
+      "Thank you for every smile, every laugh and every memory."
+    </p>
+  </div>
 
-</h1>
+  <div class="scene">
+    <h2 class="name">Pipai ❤️</h2>
 
-<p class="subtitle">
+    <p class="desc">My Best Friend</p>
+    <p class="desc">My Safe Place</p>
+    <p class="desc">My Forever Friend</p>
+  </div>
 
-Some stories are written by destiny.
+  <div class="scene">
 
-Ours was written by the heart.
+    <div class="letter-card">
 
-</p>
+      <h2>A Letter For You 💌</h2>
 
-<button id="startBtn">
+      <p>
+        Dear Pipai,<br><br>
 
-Begin The Story
+        Thank you for always being there for me.
+        Your friendship is one of the most beautiful gifts in my life.
+        No matter where life takes us,
+        you'll always have a special place in my heart.
+        Happy Friendship Day! ❤️
 
-</button>
+      </p>
 
-</div>
+    </div>
+
+  </div>
+
+  <div class="scene ending">
+
+    <h1>Happy Friendship Day ❤️</h1>
+
+    <p>Forever Friends.</p>
+
+  </div>
 
 </section>
 
-<section id="story">
-<div class="scene" id="scene1">
+<script src="script.js"></script>
 
-<p class="quote">
-
-"In a world full of billions..."
-
-</p>
-
-</div>
-
-<div class="scene" id="scene2">
-
-<p class="quote">
-
-"My heart chose only one..."
-
-</p>
-
-</div>
-
-<div class="scene" id="scene3">
-
-<h2 class="name">
-
-Pipai
-
-</h2>
-
-<p class="desc">
-
-My Best Friend
-
-</p>
-
-<p class="desc">
-
-My Safe Place
-
-</p>
-
-<p class="desc">
-
-My Forever
-
-</p>
-
-</div>
-
-<div class="scene letter>
+</body>
+</html>
