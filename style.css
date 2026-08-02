@@ -116,9 +116,10 @@ backdrop-filter:blur(18px);
 
 border:1px solid rgba(255,255,255,.15);
 
-box-shadow:
+box-shadow: 
 
 0 20px 60px rgba(0,0,0,.45);
+}
 
 text-align:center;
 
@@ -346,9 +347,10 @@ padding:30px 22px;
 }
 
 .glass h1{
-
-font-size:46px;
-
+    font-family:'Cormorant Garamond', serif;
+    font-size:64px;
+    font-weight:700;
+    margin-bottom:20px;
 }
 
 .quote{
@@ -399,4 +401,20 @@ width:100%;
 
 }
 
+}
+.subtitle{
+    font-size:20px;
+    line-height:1.8;
+    margin:20px 0 30px;
+    color:#f2f2f2;
+}
+
+#startBtn{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:#ff5d93;
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
 }
